@@ -1,7 +1,8 @@
 using CBTPRDM_PROVA_02.ViewModels;
 
-namespace CBTPRDM_PROVA_02.Views;
+//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
 
+namespace CBTPRDM_PROVA_02.Views;
 public partial class CadastrarLivro : ContentPage
 {
 	public CadastrarLivro(CadastroLivroViewModel viewModel)

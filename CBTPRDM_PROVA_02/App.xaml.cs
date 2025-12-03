@@ -1,5 +1,7 @@
 ﻿using CBTPRDM_PROVA_02.Views;
 
+//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
 namespace CBTPRDM_PROVA_02
 {
     public partial class App : Application

@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
 namespace CBTPRDM_PROVA_02.ViewModels
 {
     public partial class ListaLivrosViewModel : ObservableObject
