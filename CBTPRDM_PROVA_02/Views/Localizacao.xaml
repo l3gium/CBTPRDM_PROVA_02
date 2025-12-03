@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CBTPRDM_PROVA_02.Views.Localizacao"
+             Title="Localizacao">
+    <StackLayout Padding="20">
+        <!-- Mensagem de status do ViewModel (útil para debug de permissões) -->
+        <Label Text="{Binding StatusMensagem}" 
+               FontAttributes="Bold" 
+               TextColor="White"
+               Margin="0,0,0,20"/>
+
+        <!-- Botão para forçar obtenção da localização -->
+        <Button Text="Obter Localização" 
+                Command="{Binding GetLocationCommand}"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                CornerRadius="8"
+                Margin="0,0,0,20"/>
+
+        <!-- Coordenadas -->
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,6">
+                <Label Text="Latitude:" FontAttributes="Bold" TextColor="White" WidthRequest="100"/>
+                <Label Text="{Binding LocalizacaoAtual.Latitude}" TextColor="White"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="0,6">
+                <Label Text="Longitude:" FontAttributes="Bold" TextColor="White" WidthRequest="100"/>
+                <Label Text="{Binding LocalizacaoAtual.Longitude}" TextColor="White"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="0,6">
+                <Label Text="Altitude:" FontAttributes="Bold" TextColor="White" WidthRequest="100"/>
+                <Label Text="{Binding LocalizacaoAtual.Altitude}" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

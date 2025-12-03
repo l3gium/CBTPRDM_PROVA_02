@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CBTPRDM_PROVA_02.ViewModels"
+             xmlns:models="clr-namespace:CBTPRDM_PROVA_02.Models"
+             x:Class="CBTPRDM_PROVA_02.Views.ListaLivros"
+             Title="Meus Livros Cadastrados">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Fill" Padding="0,0,0,6">
+            <Button Text="Créditos"
+                    CornerRadius="8"
+                    Padding="10,6"
+                    HorizontalOptions="End"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaLivrosViewModel}}, Path=GoToCreditosPageCommand}"
+                    CommandParameter="{Binding .}"/>
+            <Button Text="Localização" 
+                    CornerRadius="8"
+                    Padding="10,6"
+                    HorizontalOptions="End"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaLivrosViewModel}}, Path=GoToLocalizacaoPageCommand}"
+                    CommandParameter="{Binding .}"/>
+            
+        </HorizontalStackLayout>
+
+        <Button Text="Adicionar Novo Livro" 
+                Command="{Binding GoToCadastroPageCommand}" 
+                BackgroundColor="#512BD4" 
+                TextColor="White"
+                CornerRadius="10"/>
+
+        <CollectionView ItemsSource="{Binding Livros}" 
+                        SelectionMode="None" 
+                        EmptyView="Nenhum livro cadastrado. Clique em Adicionar Novo Livro!">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Livro">
+                    <Border 
+                            Padding="15"
+                            Margin="0, 5"
+                            Stroke="#DDDDDD"
+                            StrokeShape="RoundRectangle 10"
+                            StrokeThickness="1">
+
+                        <Grid ColumnDefinitions="*" 
+                              RowDefinitions="Auto, Auto, Auto, Auto" 
+                              RowSpacing="8">
+
+                            <Label Grid.Row="0"
+                                   Text="{Binding NomeLivro}" 
+                                   FontAttributes="Bold" 
+                                   FontSize="18"
+                                   TextColor="#FFFFFF"/>
+
+                            <VerticalStackLayout Grid.Row="1" Spacing="2">
+                                <HorizontalStackLayout Spacing="5">
+                                    <Label Text="Autor:"  TextColor="#DDDDDD" FontSize="14"/>
+                                    <Label Text="{Binding NomeAutor}" TextColor="#DDDDDD" FontSize="14"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="5">
+                                    <Label Text="E-mail:" TextColor="#555555" FontSize="12"/>
+                                    <Label Text="{Binding EmailAutor}" TextColor="#DDDDDD" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Grid.Row="2" Spacing="5" Margin="0, 5, 0, 0">
+                                <Label Text="ISBN:" TextColor="#DDDDDD" FontSize="12"/>
+                                <Label Text="{Binding ISBN}" TextColor="#DDDDDD" FontSize="12"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Grid.Row="3" Spacing="10" HorizontalOptions="End" Margin="0, 15, 0, 0">
+
+                                <Button Text="Excluir"
+                                        BackgroundColor="Red"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        Padding="10, 5"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaLivrosViewModel}}, Path=DeleteLivroCommand}"
+                                        CommandParameter="{Binding .}"/>
+
+                                <Button Text="Editar"
+                                        BackgroundColor="#512BD4"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        Padding="10, 5"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ListaLivrosViewModel}}, Path=GoToEdicaoPageCommand}"
+                                        CommandParameter="{Binding .}"/>
+
+                            </HorizontalStackLayout>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

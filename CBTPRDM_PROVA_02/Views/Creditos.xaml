@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CBTPRDM_PROVA_02.Views.Creditos"
+             Title="Créditos da Aplicação"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <VerticalStackLayout Spacing="40"
+                             Padding="30">
+            <Label Text="Créditos"
+                   TextColor="#512BD4"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0, 20, 0, 10"/>
+            <Border BackgroundColor="White"
+                    Padding="25">
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="Desenvolvimento e Implementação"
+                           TextColor="#333333"
+                           FontSize="20"                          
+                           HorizontalOptions="Center"/>
+
+                    <BoxView HeightRequest="2"
+                             WidthRequest="80"
+                             Color="#512BD4"
+                             HorizontalOptions="Center"/>
+
+                    <VerticalStackLayout Spacing="10" Margin="0, 10, 0, 0">
+                        <Label Text="Esta aplicação foi desenvolvida por:"
+                               TextColor="#555555"
+                               FontSize="16"
+                               HorizontalOptions="Center"/>
+
+                        <Label Text="Beatriz Bastos Borges"
+                               TextColor="#000000"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+
+                        <Label Text="Miguel Luizatto Alves"
+                               TextColor="#000000"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+
+                    </VerticalStackLayout>
+
+                    <Label Text="Disciplina: CBTPRDM - ADS 671 | IFSP Cubatão"
+                           TextColor="#888888"
+                           FontSize="12"
+                           HorizontalOptions="Center"
+                           Margin="0, 10, 0, 0"/>
+
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

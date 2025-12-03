@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CBTPRDM_PROVA_02.ViewModels"
+             x:Class="CBTPRDM_PROVA_02.Views.CadastrarLivro"
+             Title="Cadastro de Livro">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="{Binding Livro.Id, StringFormat='Livro ID: {0}'}" 
+                   IsVisible="{Binding Livro.Id, Converter={StaticResource IsNotZeroConverter}}" 
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="End"/>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nome do Livro:" FontAttributes="Bold"/>
+                <Entry Placeholder="Título da obra" Text="{Binding Livro.NomeLivro}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nome do Autor:" FontAttributes="Bold"/>
+                <Entry Placeholder="Nome completo do autor" Text="{Binding Livro.NomeAutor}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="E-mail do Autor:" FontAttributes="Bold"/>
+                <Entry Placeholder="email@autor.com" Keyboard="Email" Text="{Binding Livro.EmailAutor}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="ISBN:" FontAttributes="Bold"/>
+                <Entry Placeholder="Ex: 978-8575225121" Text="{Binding Livro.ISBN}"/>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" Margin="0, 30, 0, 0">
+                <Button Grid.Column="0" 
+                    Text="Cancelar" 
+                    Command="{Binding CancelarCommand}" 
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    Margin="0,0,10,0"/>
+                
+                <Button Grid.Column="1" 
+                    Text="Salvar Livro" 
+                    Command="{Binding SalvarCommand}" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    Margin="10,0,0,0"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
